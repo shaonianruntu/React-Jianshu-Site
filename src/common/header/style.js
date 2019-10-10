@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:11:24
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 14:23:53
+ * @LastEditTime: 2019-10-10 15:08:32
  */
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
@@ -60,13 +60,34 @@ float: left;
 .iconfont {
     position: absolute;
     right: 5px;
-    bottom: 5px;
+    bottom: 4px;
     width: 30px;
     height: 30px;
     line-height: 30px;
     /* background: orange; */
     border-radius:50%;
     text-align: center;
+    &.focused{
+        background: #777;
+        color: #fff;
+    }
+}
+
+
+.slide-enter { 
+    width: 240px;
+  transition: all 0.2s ease-out;
+}
+.slide-enter-active {
+    width: 300px;
+ 
+}
+.slide-exit {
+    width: 300px;
+  transition: all 0.2s ease-out;
+}
+.slide-exit-active {
+    width: 240px;
 }
 
 `
@@ -83,10 +104,15 @@ font-size:14px;
 background: #eee;
 margin-top: 10px;
 margin-left: 20px;
-padding: 0 20px;
+padding: 0 30px 0 20px;
 box-sizing: border-box; /* 不让 padding 来扩充 width */
+color: #777;
 &::placeholder{
     color: #999;
+}
+&.focused{
+    width: 300px;
+
 }
 `
 
