@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:09:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 19:11:53
+ * @LastEditTime: 2019-10-10 20:25:03
  */
 import React, { Component } from "react";
 import { CSSTransition } from "react-transition-group";
@@ -32,19 +32,43 @@ import { GlobalStyle } from "../../statics/iconfont/iconfont";
 
 class Header extends Component {
   getListArea() {
-    const { focused, list } = this.props;
-    if (focused) {
+    const {
+      focused,
+      mouseIn,
+      list,
+      page,
+      totalPage,
+      totalNum,
+      handleMouseEnter,
+      handleMouseLeave,
+      handleChangePage
+    } = this.props;
+    const newList = list.toJS();
+    const pageList = [];
+
+    for (let i = (page - 1) * 10; i < Math.min(page * 10, totalNum); i++) {
+      pageList.push(
+        <SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>
+      );
+    }
+
+    if (focused || mouseIn) {
       return (
-        <SearchInfo>
+        <SearchInfo
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch
+              onClick={() => {
+                handleChangePage(page, totalPage);
+              }}
+            >
+              换一批
+            </SearchInfoSwitch>
           </SearchInfoTitle>
-          <SearchInfoList>
-            {list.map(item => {
-              return <SearchInfoItem key={item}>{item}</SearchInfoItem>;
-            })}
-          </SearchInfoList>
+          <SearchInfoList>{pageList}</SearchInfoList>
         </SearchInfo>
       );
     } else {
@@ -94,8 +118,12 @@ const mapStateToProps = state => {
   return {
     // immutable getIn 数组等价于连写 get
     focused: state.getIn(["header", "focused"]),
-    // focused: state.get("header").get("focused")
-    list: state.getIn(["header", "list"])
+    // focused: state.get("header").get("focused"),
+    mouseIn: state.getIn(["header", "mouseIn"]),
+    list: state.getIn(["header", "list"]),
+    page: state.getIn(["header", "page"]),
+    totalPage: state.getIn(["header", "totalPage"]),
+    totalNum: state.getIn(["header", "totalNum"])
   };
 };
 
@@ -105,9 +133,21 @@ const mapDispatchToProps = dispatch => {
       dispatch(actionCreators.getList());
       dispatch(actionCreators.getInputFocusAction());
     },
-
     handleInputBlur() {
       dispatch(actionCreators.getInputBlurAction());
+    },
+    handleMouseEnter() {
+      dispatch(actionCreators.getMouseEnterAction());
+    },
+    handleMouseLeave() {
+      dispatch(actionCreators.getMouseLeaveAction());
+    },
+    handleChangePage(page, totalPage) {
+      if (page < totalPage) {
+        dispatch(actionCreators.getChangePageAction(page + 1));
+      } else {
+        dispatch(actionCreators.getChangePageAction(1));
+      }
     }
   };
 };

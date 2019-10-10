@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:11:24
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 17:26:24
+ * @LastEditTime: 2019-10-10 20:20:00
  */
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
@@ -121,6 +121,7 @@ export const SearchInfo = styled.div`
     position:absolute;
     right:0px;
     top: 58px;
+    left: 20px;
     width:260px;
     padding: 0px 20px;
 
