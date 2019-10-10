@@ -4,13 +4,14 @@
  * @Github:
  * @Date: 2019-10-10 15:21:39
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 16:37:13
+ * @LastEditTime: 2019-10-10 19:03:43
  */
 import { actionTypes } from "./index";
 import { fromJS } from "immutable";
 
 const defaultState = fromJS({
-  focused: false
+  focused: false,
+  list: []
 });
 
 export default (state = defaultState, action) => {
@@ -20,6 +21,9 @@ export default (state = defaultState, action) => {
   }
   if (action.type === actionTypes.SEARCH_BLUR) {
     return state.set("focused", false);
+  }
+  if (action.type === actionTypes.CHANGE_LIST) {
+    return state.set("list", action.data);
   }
   return state;
 };
