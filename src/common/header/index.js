@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:09:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 16:10:27
+ * @LastEditTime: 2019-10-10 17:05:50
  */
 import React from "react";
 import { CSSTransition } from "react-transition-group";
@@ -63,7 +63,9 @@ const Header = props => {
 
 const mapStateToProps = state => {
   return {
-    focused: state.header.focused
+    // immutable getIn 数组等价于连写 get
+    focused: state.getIn(["header", "focused"])
+    // focused: state.get("header").get("focused")
   };
 };
 
