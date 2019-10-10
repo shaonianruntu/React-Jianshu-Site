@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:11:24
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 15:08:32
+ * @LastEditTime: 2019-10-10 15:11:02
  */
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
@@ -74,21 +74,7 @@ float: left;
 }
 
 
-.slide-enter { 
-    width: 240px;
-  transition: all 0.2s ease-out;
-}
-.slide-enter-active {
-    width: 300px;
- 
-}
-.slide-exit {
-    width: 300px;
-  transition: all 0.2s ease-out;
-}
-.slide-exit-active {
-    width: 240px;
-}
+
 
 `
 
@@ -113,6 +99,21 @@ color: #777;
 &.focused{
     width: 300px;
 
+}
+&.slide-enter { 
+    width: 240px;
+  transition: all 0.2s ease-out;
+}
+&.slide-enter-active {
+    width: 300px;
+ 
+}
+&.slide-exit {
+    width: 300px;
+  transition: all 0.2s ease-out;
+}
+&.slide-exit-active {
+    width: 240px;
 }
 `
 
