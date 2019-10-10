@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:09:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 15:56:08
+ * @LastEditTime: 2019-10-10 16:10:27
  */
 import React from "react";
 import { CSSTransition } from "react-transition-group";
@@ -21,10 +21,7 @@ import {
   Button
 } from "./style";
 
-import {
-  getInputFocusAction,
-  getInputBlurAction
-} from "../../store/actionCreators";
+import { actionCreators } from "./store";
 
 import { GlobalStyle } from "../../statics/iconfont/iconfont";
 
@@ -73,13 +70,11 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     handleInputFocus() {
-      const action = getInputFocusAction();
-      dispatch(action);
+      dispatch(actionCreators.getInputFocusAction());
     },
 
     handleInputBlur() {
-      const action = getInputBlurAction();
-      dispatch(action);
+      dispatch(actionCreators.getInputBlurAction());
     }
   };
 };

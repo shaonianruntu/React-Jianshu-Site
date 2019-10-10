@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:11:24
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 15:11:02
+ * @LastEditTime: 2019-10-10 16:06:59
  */
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
@@ -76,7 +76,7 @@ float: left;
 
 
 
-`
+` 
 
 export const NavSearch = styled.input.attrs({
     placeholder: "搜索"

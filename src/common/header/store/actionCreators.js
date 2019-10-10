@@ -4,14 +4,14 @@
  * @Github:
  * @Date: 2019-10-10 15:30:10
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 15:34:39
+ * @LastEditTime: 2019-10-10 16:11:29
  */
-import { SEARCH_FOCUS, SEARCH_BLUR } from "./actionTypes";
+import { actionTypes } from "./index";
 
 export const getInputFocusAction = () => ({
-  type: SEARCH_FOCUS
+  type: actionTypes.SEARCH_FOCUS
 });
 
 export const getInputBlurAction = () => ({
-  type: SEARCH_BLUR
+  type: actionTypes.SEARCH_BLUR
 });
