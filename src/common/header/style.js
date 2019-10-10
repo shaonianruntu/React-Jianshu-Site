@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:11:24
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 16:06:59
+ * @LastEditTime: 2019-10-10 17:26:24
  */
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
@@ -117,6 +117,49 @@ color: #777;
 }
 `
 
+export const SearchInfo = styled.div`
+    position:absolute;
+    right:0px;
+    top: 58px;
+    width:260px;
+    padding: 0px 20px;
+
+    box-shadow: 0 0 8px rgba(0,0,0,0.2)
+
+
+`
+
+export const SearchInfoTitle = styled.div`
+margin-top:20px;
+margin-bottom:15px;
+line-height:20px;
+font-size: 14px;
+color: #969696;
+`
+
+export const SearchInfoSwitch = styled.div`
+float:right;
+font-size: 13px;
+
+`
+
+export const SearchInfoList = styled.div`
+    overflow: hidden;
+    margin-bottom: 10px;
+`
+
+export const SearchInfoItem = styled.a`
+display:block;
+float: left;
+line-height: 20px;
+padding: 0px 7px;
+margin-right:10px;
+margin-bottom:10px;
+font-size: 12px;
+border: 1px solid #ddd;
+color: #787878;
+border-radius: 3px;
+`
 
 
 export const Addition = styled.div`

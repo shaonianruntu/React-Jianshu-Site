@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:09:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 17:05:50
+ * @LastEditTime: 2019-10-10 17:27:52
  */
 import React from "react";
 import { CSSTransition } from "react-transition-group";
@@ -17,6 +17,11 @@ import {
   NavItem,
   SearchWrapper,
   NavSearch,
+  SearchInfo,
+  SearchInfoTitle,
+  SearchInfoSwitch,
+  SearchInfoList,
+  SearchInfoItem,
   Addition,
   Button
 } from "./style";
@@ -24,6 +29,35 @@ import {
 import { actionCreators } from "./store";
 
 import { GlobalStyle } from "../../statics/iconfont/iconfont";
+
+const getListArea = show => {
+  if (show) {
+    return (
+      <SearchInfo>
+        <SearchInfoTitle>
+          热门搜索
+          <SearchInfoSwitch>换一批</SearchInfoSwitch>
+        </SearchInfoTitle>
+        <SearchInfoList>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+          <SearchInfoItem>教育</SearchInfoItem>
+        </SearchInfoList>
+      </SearchInfo>
+    );
+  } else {
+    return null;
+  }
+};
 
 // 无状态组件
 const Header = props => {
@@ -49,6 +83,7 @@ const Header = props => {
             ></NavSearch>
           </CSSTransition>
           <i className={focused ? "focused iconfont" : "iconfont"}>&#xe637;</i>
+          {getListArea(focused)}
         </SearchWrapper>
       </Nav>
       <Addition>
