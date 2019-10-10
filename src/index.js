@@ -1,12 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+/*
+ * @Description:
+ * @Author: fangn
+ * @Github:
+ * @Date: 2019-10-10 10:23:05
+ * @LastEditors: fangn
+ * @LastEditTime: 2019-10-10 14:12:03
+ */
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { GlobalStyle } from "./statics/iconfont/iconfont";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+  <App>
+    <GlobalStyle />
+  </App>,
+  document.getElementById("root")
+);
