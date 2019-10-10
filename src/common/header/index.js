@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:09:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 15:39:03
+ * @LastEditTime: 2019-10-10 15:56:08
  */
 import React from "react";
 import { CSSTransition } from "react-transition-group";
@@ -66,7 +66,7 @@ const Header = props => {
 
 const mapStateToProps = state => {
   return {
-    focused: state.focused
+    focused: state.header.focused
   };
 };
 

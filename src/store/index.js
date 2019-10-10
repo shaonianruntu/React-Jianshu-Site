@@ -4,11 +4,12 @@
  * @Github:
  * @Date: 2019-10-10 15:21:03
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 15:22:40
+ * @LastEditTime: 2019-10-10 15:49:32
  */
-import { createStore } from "redux";
+import { createStore, compose } from "redux";
 import reducer from "./reducer";
 
-const store = createStore(reducer);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducer, /* preloadedState, */ composeEnhancers());
 
 export default store;
