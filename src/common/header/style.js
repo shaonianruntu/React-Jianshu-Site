@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:11:24
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 20:20:00
+ * @LastEditTime: 2019-10-10 20:45:14
  */
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
@@ -57,7 +57,7 @@ export const NavItem = styled.div`
 export const SearchWrapper = styled.div`
 position:relative;
 float: left;
-.iconfont {
+.zoom {
     position: absolute;
     right: 5px;
     bottom: 4px;
@@ -141,7 +141,14 @@ color: #969696;
 export const SearchInfoSwitch = styled.div`
 float:right;
 font-size: 13px;
-
+.spin{
+    display: block;
+    float:left;
+    font-size :12px;
+    margin-right:2px;
+    transition: all .2s ease-in;
+    transform-origin: center center;
+}
 `
 
 export const SearchInfoList = styled.div`

@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:09:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 20:25:03
+ * @LastEditTime: 2019-10-10 20:44:48
  */
 import React, { Component } from "react";
 import { CSSTransition } from "react-transition-group";
@@ -62,9 +62,17 @@ class Header extends Component {
             热门搜索
             <SearchInfoSwitch
               onClick={() => {
-                handleChangePage(page, totalPage);
+                handleChangePage(page, totalPage, this.spinIcon);
               }}
             >
+              <i
+                ref={icon => {
+                  this.spinIcon = icon;
+                }}
+                className="iconfont spin"
+              >
+                &#xe851;
+              </i>
               换一批
             </SearchInfoSwitch>
           </SearchInfoTitle>
@@ -97,7 +105,7 @@ class Header extends Component {
                 onBlur={handleInputBlur}
               ></NavSearch>
             </CSSTransition>
-            <i className={focused ? "focused iconfont" : "iconfont"}>
+            <i className={focused ? "focused iconfont zoom" : "iconfont zoom"}>
               &#xe637;
             </i>
             {this.getListArea(focused)}
@@ -142,7 +150,16 @@ const mapDispatchToProps = dispatch => {
     handleMouseLeave() {
       dispatch(actionCreators.getMouseLeaveAction());
     },
-    handleChangePage(page, totalPage) {
+    handleChangePage(page, totalPage, spin) {
+      let originAngle = spin.style.transform.replace(/[^0-9]/g, "");
+      if (originAngle) {
+        originAngle = parseInt(originAngle, 10);
+      } else {
+        originAngle = 0;
+      }
+
+      spin.style.transform = "rotate(" + (originAngle + 360) + "deg)";
+
       if (page < totalPage) {
         dispatch(actionCreators.getChangePageAction(page + 1));
       } else {
