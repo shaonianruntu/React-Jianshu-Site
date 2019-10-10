@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:11:24
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 20:45:14
+ * @LastEditTime: 2019-10-10 20:56:20
  */
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
@@ -141,6 +141,7 @@ color: #969696;
 export const SearchInfoSwitch = styled.div`
 float:right;
 font-size: 13px;
+cursor: pointer;
 .spin{
     display: block;
     float:left;

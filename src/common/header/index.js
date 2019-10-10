@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:09:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 20:44:48
+ * @LastEditTime: 2019-10-10 20:54:03
  */
 import React, { Component } from "react";
 import { CSSTransition } from "react-transition-group";
@@ -85,7 +85,7 @@ class Header extends Component {
   }
 
   render() {
-    const { focused, handleInputFocus, handleInputBlur } = this.props;
+    const { focused, totalNum, handleInputFocus, handleInputBlur } = this.props;
     return (
       <HeaderWrapper>
         <GlobalStyle />
@@ -101,7 +101,9 @@ class Header extends Component {
             <CSSTransition in={focused} timeout={200} classNames="slide">
               <NavSearch
                 className={focused ? "focused" : ""}
-                onFocus={handleInputFocus}
+                onFocus={() => {
+                  handleInputFocus(totalNum);
+                }}
                 onBlur={handleInputBlur}
               ></NavSearch>
             </CSSTransition>
@@ -137,8 +139,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleInputFocus() {
-      dispatch(actionCreators.getList());
+    handleInputFocus(totalNum) {
+      console.log(totalNum);
+      if (totalNum === 0) {
+        dispatch(actionCreators.getList());
+      }
+
       dispatch(actionCreators.getInputFocusAction());
     },
     handleInputBlur() {
