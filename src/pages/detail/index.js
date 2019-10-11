@@ -4,10 +4,12 @@
  * @Github:
  * @Date: 2019-10-11 09:17:07
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 19:14:16
+ * @LastEditTime: 2019-10-11 19:21:02
  */
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
+
+import { actionCreators } from "./store";
 
 import {
   DetailWrapper,
@@ -41,6 +43,10 @@ class Detail extends PureComponent {
       </DetailWrapper>
     );
   }
+
+  componentDidMount() {
+    this.props.getDetail();
+  }
 }
 
 const mapState = state => ({
@@ -48,7 +54,13 @@ const mapState = state => ({
   content: state.getIn(["detail", "content"])
 });
 
+const mapDispatch = dispatch => ({
+  getDetail() {
+    dispatch(actionCreators.getDetail());
+  }
+});
+
 export default connect(
   mapState,
-  null
+  mapDispatch
 )(Detail);
