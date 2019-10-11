@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:11:24
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 20:56:20
+ * @LastEditTime: 2019-10-11 09:28:24
  */
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
@@ -32,7 +32,7 @@ export const Nav = styled.div`
     width:960px;
     height:100%;
     margin:0px auto;
-    padding-right: 70px;
+    /* padding-right: 70px; */
     box-sizing: border-box;
 `
 
