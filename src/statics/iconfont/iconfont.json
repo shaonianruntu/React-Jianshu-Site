@@ -33,6 +33,27 @@
       "font_class": "fangdajing",
       "unicode": "e637",
       "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "7766729",
+      "name": "icon_community_line",
+      "font_class": "icon_community_line",
+      "unicode": "eb93",
+      "unicode_decimal": 60307
+    },
+    {
+      "icon_id": "7766794",
+      "name": "icon_sketch",
+      "font_class": "icon_sketch",
+      "unicode": "eb9e",
+      "unicode_decimal": 60318
+    },
+    {
+      "icon_id": "7766798",
+      "name": "icon_star",
+      "font_class": "icon_star",
+      "unicode": "eb9f",
+      "unicode_decimal": 60319
     }
   ]
 }

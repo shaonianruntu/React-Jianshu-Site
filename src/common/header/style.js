@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:11:24
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 09:28:24
+ * @LastEditTime: 2019-10-11 11:43:03
  */
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
@@ -125,8 +125,8 @@ export const SearchInfo = styled.div`
     width:260px;
     padding: 0px 20px;
 
-    box-shadow: 0 0 8px rgba(0,0,0,0.2)
-
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    background:white;
 
 `
 
@@ -155,6 +155,7 @@ cursor: pointer;
 export const SearchInfoList = styled.div`
     overflow: hidden;
     margin-bottom: 10px;
+    margin-right:-10px;
 `
 
 export const SearchInfoItem = styled.a`
@@ -196,3 +197,4 @@ export const Button = styled.div`
         background: #ec6149;
     }
 `
+
