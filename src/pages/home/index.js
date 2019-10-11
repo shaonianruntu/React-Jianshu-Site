@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 09:16:25
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 15:26:44
+ * @LastEditTime: 2019-10-11 15:44:59
  */
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -44,16 +44,14 @@ class Home extends Component {
 
   componentDidMount() {
     const { changeHomeData } = this.props;
-    axios.get("api/home.json").then(res => {
-      const data = res.data;
-      changeHomeData(data.data);
-    });
+    changeHomeData();
   }
 }
 
 const mapDispatch = dispatch => ({
-  changeHomeData(data) {
-    dispatch(actionCreators.getChangeHomeDataAction(data));
+  changeHomeData() {
+    // 这个 dispatch 在 react-thunk 表示直接执行
+    dispatch(actionCreators.getHomeInfo());
   }
 });
 

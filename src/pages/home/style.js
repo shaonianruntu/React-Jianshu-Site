@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 09:24:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 13:55:10
+ * @LastEditTime: 2019-10-11 15:39:37
  */
 import styled from "styled-components";
 
@@ -185,6 +185,7 @@ export const WriterWrapper = styled.div`
         display:block;
         padding: 7px 7px 7px 12px;
         width: 100%;
+        box-sizing: border-box;
         font-size: 13px;
         line-height:20px;
         text-align:center;
