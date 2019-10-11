@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 09:24:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 15:39:37
+ * @LastEditTime: 2019-10-11 17:14:16
  */
 import styled from "styled-components";
 
@@ -34,6 +34,18 @@ export const HomeRight = styled.div`
   padding-top: 30px;
 `;
 
+export const BackTop = styled.div`
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    width: 60px;
+    height: 60px;
+    font-size:14px;
+    line-height: 60px;
+    text-align: center;
+    border: 1px solid #dcdcdc;
+`
+
 export const TopicWrapper = styled.div`
   overflow: hidden;
   padding: 20px 0 10px 0;
@@ -62,20 +74,22 @@ export const TopicItem = styled.div`
 `;
 
 export const ListWrapper = styled.div`
-    .readMore{
-        cursor: pointer;
-        display:block;
-        width:100%;
-        box-sizing: border-box;
-        border-radius: 20px;
-        background-color: #a5a5a5;
-    
-        margin: 30px auto 60px;
-        padding: 12px 15px;
-        text-align: center;
-        font-size: 15px;
-        color: #fff;
-    }
+
+`
+
+export const LoadMore = styled.div`        
+    cursor: pointer;
+    display:block;
+    width:100%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #a5a5a5;
+
+    margin: 30px auto 60px;
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
 `
 
 export const ListItem = styled.div`

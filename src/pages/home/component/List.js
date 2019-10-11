@@ -4,20 +4,28 @@
  * @Github:
  * @Date: 2019-10-11 09:36:01
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 13:31:34
+ * @LastEditTime: 2019-10-11 17:10:32
  */
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { ListWrapper, ListItem, ListInfo, ListAction } from "../style";
+import { actionCreators } from "../store";
+
+import {
+  ListWrapper,
+  ListItem,
+  ListInfo,
+  ListAction,
+  LoadMore
+} from "../style";
 
 class List extends Component {
   render() {
-    const { articleList } = this.props;
+    const { articleList, getMoreList, articlePage } = this.props;
     return (
       <ListWrapper>
-        {articleList.map(item => (
-          <ListItem key={item.get("id")}>
+        {articleList.map((item, index) => (
+          <ListItem key={index}>
             <img alt="" className="list-pic" src={item.get("imgUrl")}></img>
             <ListInfo>
               <h3 className="title">{item.get("title")}</h3>
@@ -40,17 +48,30 @@ class List extends Component {
             </ListInfo>
           </ListItem>
         ))}
-        <a className="readMore">阅读更多</a>
+        <LoadMore
+          onClick={() => {
+            getMoreList(articlePage);
+          }}
+        >
+          阅读更多
+        </LoadMore>
       </ListWrapper>
     );
   }
 }
 
 const mapState = state => ({
-  articleList: state.getIn(["home", "articleList"])
+  articleList: state.getIn(["home", "articleList"]),
+  articlePage: state.getIn(["home", "articlePage"])
+});
+
+const mapDispatch = dispatch => ({
+  getMoreList(articlePage) {
+    dispatch(actionCreators.getMoreList(articlePage));
+  }
 });
 
 export default connect(
   mapState,
-  null
+  mapDispatch
 )(List);

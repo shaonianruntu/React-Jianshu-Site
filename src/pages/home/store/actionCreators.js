@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 13:17:36
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 15:48:13
+ * @LastEditTime: 2019-10-11 17:31:27
  */
 import { actionTypes } from "./index";
 import axios from "axios";
@@ -17,6 +17,12 @@ const changeHomeData = data => ({
   articleList: data.articleList,
   recommandList: data.recommandList,
   writerList: data.writerList
+});
+
+const addHomeList = (list, nextPage) => ({
+  type: actionTypes.ADD_HOME_LIST,
+  list: list,
+  nextPage: nextPage
 });
 
 export const getChangePageAction = page => ({
@@ -32,3 +38,17 @@ export const getHomeInfo = () => {
     });
   };
 };
+
+export const getMoreList = articlePage => {
+  return dispatch => {
+    axios.get("api/homeList.json?page=" + articlePage).then(res => {
+      const data = res.data;
+      dispatch(addHomeList(data.data, articlePage + 1));
+    });
+  };
+};
+
+export const toggleTopShow = show => ({
+  type: actionTypes.TOGGLE_TOP_SHOW,
+  showScroll: show
+});

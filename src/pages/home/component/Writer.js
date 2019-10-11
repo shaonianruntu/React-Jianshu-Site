@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 09:36:18
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 13:28:19
+ * @LastEditTime: 2019-10-11 16:17:05
  */
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -35,7 +35,7 @@ class Writer extends Component {
 
     for (let i = (page - 1) * 5; i < Math.min(page * 5, totalNum); i++) {
       pageList.push(
-        <WriterInfoList key={newList[i]}>
+        <WriterInfoList key={newList[i].id}>
           <WriterInfoItem>
             <img className="writer-pic" alt="" src={newList[i].imgUrl}></img>
             <WriterInfoUser>

@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 09:16:25
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 15:44:59
+ * @LastEditTime: 2019-10-11 17:54:33
  */
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -15,14 +15,19 @@ import Recommand from "./component/Recommend";
 import Download from "./component/Download";
 import Writter from "./component/Writer";
 
-import axios from "axios";
-
-import { HomeWrapper, HomeLeft, HomeRight } from "./style";
+import { HomeWrapper, HomeLeft, HomeRight, BackTop } from "./style";
 
 import { actionCreators } from "./store";
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.handleScrollTop = this.handleScrollTop.bind(this);
+  }
+
   render() {
+    const { showScroll } = this.props;
+
     return (
       <HomeWrapper>
         <HomeLeft>
@@ -38,24 +43,47 @@ class Home extends Component {
           <Download></Download>
           <Writter></Writter>
         </HomeRight>
+        {showScroll ? (
+          <BackTop onClick={this.handleScrollTop}>回到顶部</BackTop>
+        ) : null}
       </HomeWrapper>
     );
+  }
+
+  handleScrollTop() {
+    window.scrollTo(0, 0);
   }
 
   componentDidMount() {
     const { changeHomeData } = this.props;
     changeHomeData();
+    window.addEventListener("scroll", this.props.changeScrollTopShow);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.props.changeScrollTopShow);
   }
 }
+
+const mapState = state => ({
+  showScroll: state.getIn(["home", "showScroll"])
+});
 
 const mapDispatch = dispatch => ({
   changeHomeData() {
     // 这个 dispatch 在 react-thunk 表示直接执行
     dispatch(actionCreators.getHomeInfo());
+  },
+  changeScrollTopShow(e) {
+    if (document.documentElement.scrollTop > 400) {
+      dispatch(actionCreators.toggleTopShow(true));
+    } else {
+      dispatch(actionCreators.toggleTopShow(false));
+    }
   }
 });
 
 export default connect(
-  null,
+  mapState,
   mapDispatch
 )(Home);
