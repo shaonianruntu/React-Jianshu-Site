@@ -4,9 +4,9 @@
  * @Github:
  * @Date: 2019-10-10 15:21:39
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 20:26:24
+ * @LastEditTime: 2019-10-11 09:54:45
  */
-import { actionTypes, actionCreators } from "./index";
+import { actionTypes } from "./index";
 import { fromJS } from "immutable";
 
 const defaultState = fromJS({
