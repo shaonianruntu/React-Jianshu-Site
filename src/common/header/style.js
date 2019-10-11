@@ -4,12 +4,13 @@
  * @Github:
  * @Date: 2019-10-10 11:11:24
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 18:16:53
+ * @LastEditTime: 2019-10-11 19:54:11
  */
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
 
 export const HeaderWrapper = styled.div`
+z-index:1;
 position:relative;
     height:58px;
     border-bottom: 1px solid #f0f0f0;
