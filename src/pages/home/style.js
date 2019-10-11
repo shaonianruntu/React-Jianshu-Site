@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 09:24:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 13:38:46
+ * @LastEditTime: 2019-10-11 13:55:10
  */
 import styled from "styled-components";
 
@@ -142,6 +142,39 @@ export const RecommendItem = styled.div`
     margin-bottom:6px;
 `
 
+export const DownloadWrapper = styled.div`
+    margin-bottom:30px;
+    padding: 7px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #f0f0f0;
+    border-radius: 6px;
+    background-color: #fff;
+    height: 66px;
+    .download-pic{
+        display:block;
+     float: left;
+        width: 50px;
+        height: 50px;
+        opacity: 0.85;
+    }
+`
+
+export const DownloadInfo = styled.div`
+
+    margin-left: 8px;
+    display: inline-block;
+    align-items: center;
+            margin-top: 10px;
+        color: #333;
+            font-size: 14px;
+            .desc{
+                font-size:12px;
+                    color: #999;
+                margin-top: 4px;
+            }
+`
+
 export const WriterWrapper = styled.div`
     margin-top: 30px;
     width: 280px;
@@ -151,7 +184,6 @@ export const WriterWrapper = styled.div`
         cursor: pointer;
         display:block;
         padding: 7px 7px 7px 12px;
-        box-sizing: border-box;
         width: 100%;
         font-size: 13px;
         line-height:20px;
