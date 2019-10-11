@@ -4,19 +4,18 @@
  * @Github:
  * @Date: 2019-10-11 09:36:01
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 11:39:47
+ * @LastEditTime: 2019-10-11 13:31:34
  */
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { ListItem, ListInfo, ListAction } from "../style";
-import { list } from "postcss";
+import { ListWrapper, ListItem, ListInfo, ListAction } from "../style";
 
 class List extends Component {
   render() {
     const { articleList } = this.props;
     return (
-      <div>
+      <ListWrapper>
         {articleList.map(item => (
           <ListItem key={item.get("id")}>
             <img alt="" className="list-pic" src={item.get("imgUrl")}></img>
@@ -41,7 +40,8 @@ class List extends Component {
             </ListInfo>
           </ListItem>
         ))}
-      </div>
+        <a className="readMore">阅读更多</a>
+      </ListWrapper>
     );
   }
 }

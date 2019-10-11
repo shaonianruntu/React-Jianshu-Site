@@ -4,11 +4,16 @@
  * @Github:
  * @Date: 2019-10-10 15:21:39
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 11:41:38
+ * @LastEditTime: 2019-10-11 13:30:36
  */
+import { actionTypes } from "./index";
 import { fromJS } from "immutable";
 
 const defaultState = fromJS({
+  page: 1,
+  totalPage: 2,
+  totalNum: 7,
+
   topicList: [
     {
       id: 1,
@@ -106,11 +111,71 @@ const defaultState = fromJS({
       imgUrl:
         "https://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
     }
+  ],
+  writerList: [
+    {
+      id: 1,
+      name: "简书钻首席小管家",
+      wordNum: "190.1k",
+      likedNum: "146.8k",
+      imgUrl:
+        "https://upload.jianshu.io/users/upload_avatars/14715425/e0668349-8c75-43db-8a9d-c388e5f00d0d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+    },
+    {
+      id: 2,
+      name: "只有一半影子的人",
+      wordNum: "257.3k",
+      likedNum: "1.4k",
+      imgUrl:
+        "https://upload.jianshu.io/users/upload_avatars/6305091/dc5b863a-26fc-47df-af32-18177f6cc9ff.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+    },
+    {
+      id: 3,
+      name: "无限猴子",
+      wordNum: "410.9k",
+      likedNum: "2.2k",
+      imgUrl:
+        "https://upload.jianshu.io/users/upload_avatars/13213889/7314c5cc-ca7f-4542-b914-2c8dffaf324d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+    },
+    {
+      id: 4,
+      name: "卢璐说",
+      wordNum: "1213k",
+      likedNum: "26.9k",
+      imgUrl:
+        "https://upload.jianshu.io/users/upload_avatars/301940/189d69dd-af7c-4290-9e2c-89e98acf3603.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+    },
+    {
+      id: 5,
+      name: "梅拾璎",
+      wordNum: "274.8k",
+      likedNum: "29.2k",
+      imgUrl:
+        "https://upload.jianshu.io/users/upload_avatars/3136195/484e32c3504a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+    },
+    {
+      id: 6,
+      name: "晖宗聊绘画",
+      wordNum: "165.7k",
+      likedNum: "2.4k",
+      imgUrl:
+        "https://upload.jianshu.io/users/upload_avatars/4287007/b7b9c810-069e-4385-aec7-1823e94ee43d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+    },
+    {
+      id: 7,
+      name: "王小麦",
+      wordNum: "137.4k",
+      likedNum: "40.2k",
+      imgUrl:
+        "https://upload.jianshu.io/users/upload_avatars/4263857/34d7b217-7338-48fe-81a1-98367fecdbee.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+    }
   ]
 });
 
 export default (state = defaultState, action) => {
   switch (action.type) {
+    case actionTypes.CHANGE_PAGE:
+      return state.set("page", action.page);
     default:
       return state;
   }

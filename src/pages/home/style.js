@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 09:24:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 11:44:21
+ * @LastEditTime: 2019-10-11 13:38:46
  */
 import styled from "styled-components";
 
@@ -60,6 +60,23 @@ export const TopicItem = styled.div`
     margin-right: 10px;
   }
 `;
+
+export const ListWrapper = styled.div`
+    .readMore{
+        cursor: pointer;
+        display:block;
+        width:100%;
+        box-sizing: border-box;
+        border-radius: 20px;
+        background-color: #a5a5a5;
+    
+        margin: 30px auto 60px;
+        padding: 12px 15px;
+        text-align: center;
+        font-size: 15px;
+        color: #fff;
+    }
+`
 
 export const ListItem = styled.div`
   overflow: hidden;
@@ -126,11 +143,92 @@ export const RecommendItem = styled.div`
 `
 
 export const WriterWrapper = styled.div`
-margin-top: 30px;
-    width: 278px;
-    border: 1px solid #dcdcdc;
+    margin-top: 30px;
+    width: 280px;
     border-radius:3px;
-    height: 300px;
     line-height: 300px;
-    text-align: center;
+    .writer_watchMore{
+        cursor: pointer;
+        display:block;
+        padding: 7px 7px 7px 12px;
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 13px;
+        line-height:20px;
+        text-align:center;
+        color: #787878;
+        background-color: #f7f7f7;
+        border: 1px solid #dcdcdc;
+        border-radius: 4px;
+    } 
+`
+
+
+export const WriterTitle = styled.div`
+    font-size:14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #969696;
+`
+
+export const WriteSwitch = styled.div`
+    float:right;
+    cursor: pointer;
+    .spin{
+        display: block;
+        float:left;
+        font-size :14px;
+        margin-right:2px;
+        transition: all .2s ease-in;
+        transform-origin: center center;
+    }
+`
+
+export const WriterInfoList = styled.div`
+    overflow: hidden;
+   margin-bottom: 10px;
+`
+
+export const WriterInfoItem = styled.div`
+    .writer-pic{
+        display: block;
+        float: left;
+        width:48px;
+        height:48px;
+        border-radius: 50%;
+        border: 1px solid #ddd
+    }
+`
+
+export const WriterInfoUser = styled.div`
+    width: 220px;
+    display:block;
+    float: right;
+    padding-top: 5px;
+    font-size: 14px;
+    line-height: 20px;
+    color:#333;
+
+    .desc{
+        margin-top: 2px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: #969696;
+    }
+`
+
+export const WriterInfoUserTitle = styled.div`
+    .title{
+        width: 160px;
+        float: left;
+        display: block;
+    }
+    .follow{
+        width: 50px;
+        text-align: right;
+        font-size: 13px;
+        display: block;
+        float: right;
+        color: #42c02e;
+    }
 `

@@ -4,8 +4,10 @@
  * @Github:
  * @Date: 2019-10-11 09:58:54
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 09:59:05
+ * @LastEditTime: 2019-10-11 13:19:54
  */
 import reducer from "./reducer";
+import * as actionCreators from "./actionCreators";
+import * as actionTypes from "./actionTypes";
 
-export { reducer };
+export { reducer, actionCreators, actionTypes };
