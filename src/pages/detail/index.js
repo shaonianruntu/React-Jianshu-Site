@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 09:17:07
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 19:21:02
+ * @LastEditTime: 2019-10-11 19:33:49
  */
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
@@ -45,7 +45,7 @@ class Detail extends PureComponent {
   }
 
   componentDidMount() {
-    this.props.getDetail();
+    this.props.getDetail(this.props.match.params.id);
   }
 }
 
@@ -55,8 +55,8 @@ const mapState = state => ({
 });
 
 const mapDispatch = dispatch => ({
-  getDetail() {
-    dispatch(actionCreators.getDetail());
+  getDetail(id) {
+    dispatch(actionCreators.getDetail(id));
   }
 });
 

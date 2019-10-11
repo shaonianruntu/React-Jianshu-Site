@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 09:36:01
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 18:15:05
+ * @LastEditTime: 2019-10-11 19:30:19
  */
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
@@ -26,7 +26,7 @@ class List extends PureComponent {
     return (
       <ListWrapper>
         {articleList.map((item, index) => (
-          <Link key={index} to="/detail">
+          <Link key={index} to={"/detail" + item.get("id")}>
             <ListItem>
               <img alt="" className="list-pic" src={item.get("imgUrl")}></img>
               <ListInfo>
