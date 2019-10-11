@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 10:23:05
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-10 10:23:05
+ * @LastEditTime: 2019-10-11 18:55:06
  */
 import { createGlobalStyle } from "styled-components";
 
@@ -13,6 +13,7 @@ body
 {
   margin: 0;
   padding: 0;
+  background-color: #f9f9f9;
 }
 
 

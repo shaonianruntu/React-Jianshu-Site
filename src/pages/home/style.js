@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 09:24:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 18:23:43
+ * @LastEditTime: 2019-10-11 18:40:48
  */
 import styled from "styled-components";
 
@@ -12,7 +12,6 @@ export const HomeWrapper = styled.div`
   width: 960px;
   margin: 0px auto;
   overflow: hidden;
-  /* background: orange; */
 `;
 
 export const HomeLeft = styled.div`
