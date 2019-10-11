@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 13:17:36
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 17:31:27
+ * @LastEditTime: 2019-10-11 19:46:13
  */
 import { actionTypes } from "./index";
 import axios from "axios";
@@ -32,7 +32,7 @@ export const getChangePageAction = page => ({
 
 export const getHomeInfo = () => {
   return dispatch => {
-    axios.get("api/home.json").then(res => {
+    axios.get("/api/home.json").then(res => {
       const data = res.data;
       dispatch(changeHomeData(data.data));
     });
@@ -41,7 +41,7 @@ export const getHomeInfo = () => {
 
 export const getMoreList = articlePage => {
   return dispatch => {
-    axios.get("api/homeList.json?page=" + articlePage).then(res => {
+    axios.get("/api/homeList.json?page=" + articlePage).then(res => {
       const data = res.data;
       dispatch(addHomeList(data.data, articlePage + 1));
     });

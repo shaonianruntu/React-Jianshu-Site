@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 19:02:07
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 19:33:32
+ * @LastEditTime: 2019-10-11 19:45:38
  */
 import axios from "axios";
 import { actionTypes } from "./index";
@@ -17,7 +17,7 @@ const changeDetail = data => ({
 
 export const getDetail = id => {
   return dispatch => {
-    axios.get("api/detail.json?id=" + id).then(res => {
+    axios.get("/api/detail.json?id=" + id).then(res => {
       const data = res.data;
       dispatch(changeDetail(data.data));
     });

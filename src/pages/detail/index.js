@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 09:17:07
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 19:33:49
+ * @LastEditTime: 2019-10-11 19:44:34
  */
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
@@ -22,6 +22,7 @@ import {
 
 class Detail extends PureComponent {
   render() {
+    console.log(this.props);
     const { title, content } = this.props;
     return (
       <DetailWrapper>

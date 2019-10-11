@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 10:28:22
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 19:31:04
+ * @LastEditTime: 2019-10-11 19:43:12
  */
 import React, { Component } from "react";
 import { Provider } from "react-redux";
@@ -29,7 +29,7 @@ class App extends Component {
         <BrowserRouter>
           <Header />
           <Route path="/" exact component={Home}></Route>
-          <Route path="/detail:id" exact component={Detail}></Route>
+          <Route path="/detail/:id" exact component={Detail}></Route>
         </BrowserRouter>
       </Provider>
     );

@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:09:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 18:24:24
+ * @LastEditTime: 2019-10-11 19:46:43
  */
 import React, { Component } from "react";
 import { CSSTransition } from "react-transition-group";
@@ -87,7 +87,7 @@ class Header extends Component {
     const { focused, totalNum, handleInputFocus, handleInputBlur } = this.props;
     return (
       <HeaderWrapper>
-        <Link to="./">
+        <Link to="/">
           <Logo></Logo>
         </Link>
         <Nav>
