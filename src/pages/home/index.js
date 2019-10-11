@@ -4,9 +4,9 @@
  * @Github:
  * @Date: 2019-10-11 09:16:25
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 17:54:33
+ * @LastEditTime: 2019-10-11 18:11:09
  */
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 
 import Topic from "./component/Topic";
@@ -19,7 +19,7 @@ import { HomeWrapper, HomeLeft, HomeRight, BackTop } from "./style";
 
 import { actionCreators } from "./store";
 
-class Home extends Component {
+class Home extends PureComponent {
   constructor(props) {
     super(props);
     this.handleScrollTop = this.handleScrollTop.bind(this);

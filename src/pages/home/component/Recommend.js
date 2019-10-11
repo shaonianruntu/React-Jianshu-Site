@@ -6,12 +6,12 @@
  * @LastEditors: fangn
  * @LastEditTime: 2019-10-11 11:40:01
  */
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 
 import { RecommendWrapper, RecommendItem } from "../style";
 
-class Recommend extends Component {
+class Recommend extends PureComponent {
   render() {
     const { recommandList } = this.props;
     return (

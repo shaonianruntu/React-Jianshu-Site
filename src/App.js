@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 10:28:22
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 09:18:39
+ * @LastEditTime: 2019-10-11 18:24:12
  */
 import React, { Component } from "react";
 import { Provider } from "react-redux";
@@ -17,12 +17,17 @@ import Detail from "./pages/detail";
 
 import store from "./store";
 
+import { GlobalStyle } from "./style";
+import { IconGlobalStyle } from "./statics/iconfont/iconfont";
+
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Header />
+        <GlobalStyle />
+        <IconGlobalStyle />
         <BrowserRouter>
+          <Header />
           <Route path="/" exact component={Home}></Route>
           <Route path="/detail" exact component={Detail}></Route>
         </BrowserRouter>

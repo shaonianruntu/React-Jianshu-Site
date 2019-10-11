@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:11:24
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 12:40:06
+ * @LastEditTime: 2019-10-11 18:16:53
  */
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
@@ -15,9 +15,7 @@ position:relative;
     border-bottom: 1px solid #f0f0f0;
 `;
 
-export const Logo = styled.a.attrs({
-    href: "/"
-})`
+export const Logo = styled.div`
 position:absolute;
 top:0px;
 left:0px;

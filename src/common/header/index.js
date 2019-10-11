@@ -4,11 +4,12 @@
  * @Github:
  * @Date: 2019-10-10 11:09:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 13:27:19
+ * @LastEditTime: 2019-10-11 18:24:24
  */
 import React, { Component } from "react";
 import { CSSTransition } from "react-transition-group";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import {
   HeaderWrapper,
@@ -27,8 +28,6 @@ import {
 } from "./style";
 
 import { actionCreators } from "./store";
-
-import { GlobalStyle } from "../../statics/iconfont/iconfont";
 
 class Header extends Component {
   getListArea() {
@@ -88,8 +87,9 @@ class Header extends Component {
     const { focused, totalNum, handleInputFocus, handleInputBlur } = this.props;
     return (
       <HeaderWrapper>
-        <GlobalStyle />
-        <Logo></Logo>
+        <Link to="./">
+          <Logo></Logo>
+        </Link>
         <Nav>
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载App</NavItem>

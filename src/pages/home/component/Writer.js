@@ -6,7 +6,7 @@
  * @LastEditors: fangn
  * @LastEditTime: 2019-10-11 16:17:05
  */
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 
 import {
@@ -21,7 +21,7 @@ import {
 
 import { actionCreators } from "../store";
 
-class Writer extends Component {
+class Writer extends PureComponent {
   render() {
     const {
       writerList,

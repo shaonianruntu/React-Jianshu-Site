@@ -6,11 +6,11 @@
  * @LastEditors: fangn
  * @LastEditTime: 2019-10-11 13:46:36
  */
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
 import { DownloadWrapper, DownloadInfo } from "../style";
 
-class Download extends Component {
+class Download extends PureComponent {
   render() {
     return (
       <DownloadWrapper>
