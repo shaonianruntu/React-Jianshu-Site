@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-12 17:57:38
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-12 17:59:38
+ * @LastEditTime: 2019-10-12 18:14:31
  */
 /*
  * @Description:
@@ -16,6 +16,7 @@
  */
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
 // 关于 styled component 的 API 更新：https://www.jianshu.com/p/42f85418514f
@@ -39,4 +40,4 @@ const mapState = state => ({
 export default connect(
   mapState,
   null
-)(Write);
+)(withRouter(Write));

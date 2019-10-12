@@ -4,10 +4,11 @@
  * @Github:
  * @Date: 2019-10-11 09:17:07
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 19:44:34
+ * @LastEditTime: 2019-10-12 18:10:52
  */
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 
 import { actionCreators } from "./store";
 
@@ -64,4 +65,4 @@ const mapDispatch = dispatch => ({
 export default connect(
   mapState,
   mapDispatch
-)(Detail);
+)(withRouter(Detail));

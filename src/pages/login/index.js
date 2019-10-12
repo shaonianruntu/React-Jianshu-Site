@@ -4,10 +4,11 @@
  * @Github:
  * @Date: 2019-10-11 19:47:47
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-12 17:59:19
+ * @LastEditTime: 2019-10-12 18:14:15
  */
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import { LoginWrapper, LoginBox, LoginToggle, Input, Button } from "./style";
 import { actionCreators } from "./store";
@@ -75,4 +76,4 @@ const mapDispatch = dispatch => ({
 export default connect(
   mapState,
   mapDispatch
-)(Login);
+)(withRouter(Login));
