@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:09:19
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 19:46:43
+ * @LastEditTime: 2019-10-12 17:54:31
  */
 import React, { Component } from "react";
 import { CSSTransition } from "react-transition-group";
@@ -28,6 +28,7 @@ import {
 } from "./style";
 
 import { actionCreators } from "./store";
+import { actionCreators as loginActionCreators } from "../../pages/login/store";
 
 class Header extends Component {
   getListArea() {
@@ -84,7 +85,14 @@ class Header extends Component {
   }
 
   render() {
-    const { focused, totalNum, handleInputFocus, handleInputBlur } = this.props;
+    const {
+      focused,
+      totalNum,
+      handleInputFocus,
+      handleInputBlur,
+      login,
+      logout
+    } = this.props;
     return (
       <HeaderWrapper>
         <Link to="/">
@@ -93,7 +101,15 @@ class Header extends Component {
         <Nav>
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载App</NavItem>
-          <NavItem className="right">登录</NavItem>
+          {login ? (
+            <NavItem className="right" onClick={logout}>
+              退出
+            </NavItem>
+          ) : (
+            <Link to="/login">
+              <NavItem className="right">登录</NavItem>
+            </Link>
+          )}
           <NavItem className="right">
             <i className="iconfont">&#xe636;</i>
           </NavItem>
@@ -133,47 +149,46 @@ const mapStateToProps = state => {
     list: state.getIn(["header", "list"]),
     page: state.getIn(["header", "page"]),
     totalPage: state.getIn(["header", "totalPage"]),
-    totalNum: state.getIn(["header", "totalNum"])
+    totalNum: state.getIn(["header", "totalNum"]),
+    login: state.getIn(["login", "login"])
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    handleInputFocus(totalNum) {
-      console.log(totalNum);
-      if (totalNum === 0) {
-        dispatch(actionCreators.getList());
-      }
-
-      dispatch(actionCreators.getInputFocusAction());
-    },
-    handleInputBlur() {
-      dispatch(actionCreators.getInputBlurAction());
-    },
-    handleMouseEnter() {
-      dispatch(actionCreators.getMouseEnterAction());
-    },
-    handleMouseLeave() {
-      dispatch(actionCreators.getMouseLeaveAction());
-    },
-    handleChangePage(page, totalPage, spin) {
-      let originAngle = spin.style.transform.replace(/[^0-9]/g, "");
-      if (originAngle) {
-        originAngle = parseInt(originAngle, 10);
-      } else {
-        originAngle = 0;
-      }
-
-      spin.style.transform = "rotate(" + (originAngle + 360) + "deg)";
-
-      if (page < totalPage) {
-        dispatch(actionCreators.getChangePageAction(page + 1));
-      } else {
-        dispatch(actionCreators.getChangePageAction(1));
-      }
+const mapDispatchToProps = dispatch => ({
+  handleInputFocus(totalNum) {
+    console.log(totalNum);
+    if (totalNum === 0) {
+      dispatch(actionCreators.getList());
     }
-  };
-};
+    dispatch(actionCreators.getInputFocusAction());
+  },
+  handleInputBlur() {
+    dispatch(actionCreators.getInputBlurAction());
+  },
+  handleMouseEnter() {
+    dispatch(actionCreators.getMouseEnterAction());
+  },
+  handleMouseLeave() {
+    dispatch(actionCreators.getMouseLeaveAction());
+  },
+  handleChangePage(page, totalPage, spin) {
+    let originAngle = spin.style.transform.replace(/[^0-9]/g, "");
+    if (originAngle) {
+      originAngle = parseInt(originAngle, 10);
+    } else {
+      originAngle = 0;
+    }
+    spin.style.transform = "rotate(" + (originAngle + 360) + "deg)";
+    if (page < totalPage) {
+      dispatch(actionCreators.getChangePageAction(page + 1));
+    } else {
+      dispatch(actionCreators.getChangePageAction(1));
+    }
+  },
+  logout() {
+    dispatch(loginActionCreators.logout());
+  }
+});
 
 export default connect(
   mapStateToProps,

@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 11:11:24
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 19:54:11
+ * @LastEditTime: 2019-10-12 17:52:06
  */
 import styled from "styled-components";
 import logoPic from "../../statics/logo.png";
@@ -45,6 +45,7 @@ export const NavItem = styled.div`
         float:left;
     }
     &.right{
+        cursor:pointer;
         float: right;
         color: #969696;
     }

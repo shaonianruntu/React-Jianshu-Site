@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-10 10:28:22
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 19:49:53
+ * @LastEditTime: 2019-10-11 20:37:19
  */
 import React, { Component } from "react";
 import { Provider } from "react-redux";
