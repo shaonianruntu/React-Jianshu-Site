@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 13:17:36
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-11 19:46:13
+ * @LastEditTime: 2019-10-12 18:03:21
  */
 import { actionTypes } from "./index";
 import axios from "axios";
@@ -32,19 +32,29 @@ export const getChangePageAction = page => ({
 
 export const getHomeInfo = () => {
   return dispatch => {
-    axios.get("/api/home.json").then(res => {
-      const data = res.data;
-      dispatch(changeHomeData(data.data));
-    });
+    axios
+      .get("/api/home.json")
+      .then(res => {
+        const data = res.data;
+        dispatch(changeHomeData(data.data));
+      })
+      .catch(() => {
+        console.log("error");
+      });
   };
 };
 
 export const getMoreList = articlePage => {
   return dispatch => {
-    axios.get("/api/homeList.json?page=" + articlePage).then(res => {
-      const data = res.data;
-      dispatch(addHomeList(data.data, articlePage + 1));
-    });
+    axios
+      .get("/api/homeList.json?page=" + articlePage)
+      .then(res => {
+        const data = res.data;
+        dispatch(addHomeList(data.data, articlePage + 1));
+      })
+      .catch(() => {
+        console.log("error");
+      });
   };
 };
 

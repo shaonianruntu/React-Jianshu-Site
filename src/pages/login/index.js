@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 19:47:47
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-12 17:56:22
+ * @LastEditTime: 2019-10-12 17:59:19
  */
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
@@ -50,8 +50,6 @@ class Login extends PureComponent {
         </LoginWrapper>
       );
     } else {
-      console.log(21);
-
       return <Redirect to="/"></Redirect>;
     }
   }

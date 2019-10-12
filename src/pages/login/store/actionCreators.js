@@ -4,7 +4,7 @@
  * @Github:
  * @Date: 2019-10-11 20:23:54
  * @LastEditors: fangn
- * @LastEditTime: 2019-10-12 17:49:05
+ * @LastEditTime: 2019-10-12 18:03:30
  */
 import { actionTypes } from "./index";
 import axios from "axios";
@@ -25,6 +25,9 @@ export const login = (account, password) => {
         } else {
           alert("登录失败");
         }
+      })
+      .catch(() => {
+        console.log("error");
       });
   };
 };
