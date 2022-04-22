@@ -1,4 +1,4 @@
-# Reproduce "[JianShu](https://www.jianshu.com)" Website By React Framework
+# Reproduce "[JianShu](https://www.jianshu.com)" website by React framework
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
