@@ -1,5 +1,7 @@
 # Reproduce "[JianShu](https://www.jianshu.com)" website by React framework
 
+This project is according to https://coding.imooc.com/class/229.html
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
